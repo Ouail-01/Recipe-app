@@ -9,7 +9,8 @@
   border-collapse: collapse;
 }
 
-.food-page th, td {
+.food-page th,
+td {
   padding: 10px;
   text-align: left;
   border-bottom: 1px solid #ddd;
@@ -17,7 +18,6 @@
 
 .food-page .foods:nth-child(even) {
   background-color: #c5c5c5;
-    
 }
 
 .food-page th {
@@ -26,7 +26,7 @@
 }
 
 .food-page .delete-link {
-  color: #ff0000;
+  color: #f00;
   border: none;
   background-color: transparent;
   cursor: pointer;
@@ -56,14 +56,13 @@
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
   display: flex;
   flex-direction: column;
-  align-items: center;
-  
+  align-items: center; 
 }
 
 .post-errors-box {
   color: #be2e1ec2;
   margin-bottom: 15px;
-} 
+}
 
 .new-food-title label {
   display: block;
@@ -71,7 +70,8 @@
   font-weight: bold;
 }
 
-.new-food-title input[type="text"], form input[type="number"] {
+.new-food-title input[type="text"],
+form input[type="number"] {
   width: 100%;
   padding: 8px;
   margin-bottom: 10px;
@@ -92,4 +92,3 @@
 .new-food-title input[type="submit"]:hover {
   background-color: #29b957;
 }
-  

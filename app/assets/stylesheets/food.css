@@ -23,6 +23,9 @@
 
 .food-page .delete-link {
   color: #ff0000;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
 }
 
 .food-page .add-food-link {

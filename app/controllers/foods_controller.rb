@@ -1,7 +1,7 @@
 class FoodsController < ApplicationController
   before_action :authenticate_user!, except: [:index]
   def index
-    @foods = Food.all
+    @foods = Food.where(user_id: current_user.id)
   end
 
   def new
@@ -16,6 +16,18 @@ class FoodsController < ApplicationController
       redirect_to foods_path
     else
       render :new, status: 422
+    end
+  end
+
+  def show; end
+
+  def destroy
+    @food = Food.find(params[:id])
+
+    if @food.destroy
+      redirect_to foods_path, notice: 'Food was successfully destroyed.'
+    else
+      redirect_to foods_path, alert: 'There was an error destroying the Food.'
     end
   end
 

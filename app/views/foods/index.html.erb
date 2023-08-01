@@ -14,12 +14,12 @@
     </thead>
     <tbody>
       <% @foods.each do |food|  %>
-        <tr>
+        <tr class="foods">
           <td><%= food.name %></td>
           <td><%= food.measurement_unit %></td>
           <td><%= food.price %></td>
           <td>
-            <%= link_to "Delete", food_path(food.id), method: :delete, class: "delete-link" %>
+            <%= button_to "delete", food_path(food.id), method: :delete, class: "delete-link" %>
           </td>
         </tr>
       <% end %>

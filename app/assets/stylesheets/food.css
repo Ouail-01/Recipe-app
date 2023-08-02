@@ -1,0 +1,94 @@
+.food-page h1 {
+  margin-bottom: 20px;
+  font-size: 30px;
+}
+
+.food-page table {
+  margin: auto;
+  width: 80%;
+  border-collapse: collapse;
+}
+
+.food-page th,
+td {
+  padding: 10px;
+  text-align: left;
+  border-bottom: 1px solid #ddd;
+}
+
+.food-page .foods:nth-child(even) {
+  background-color: #c5c5c5;
+}
+
+.food-page th {
+  color: #fff;
+  background-color: #6f6f6f;
+}
+
+.food-page .delete-link {
+  color: #f00;
+  border: none;
+  background-color: transparent;
+  cursor: pointer;
+}
+
+.food-page .add-food-link {
+  margin-right: 40px;
+  margin-bottom: 30px;
+  display: block;
+  text-align: right;
+  font-size: 20px;
+}
+
+.new-food-title h1 {
+  text-align: center;
+  background: rgb(117, 117, 117);
+  padding: 20px;
+  color: #fff;
+}
+
+.new-food-title form {
+  max-width: 600px;
+  margin: 20px auto;
+  padding: 20px;
+  background-color: #fff;
+  border-radius: 5px;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.post-errors-box {
+  color: #be2e1ec2;
+  margin-bottom: 15px;
+}
+
+.new-food-title label {
+  display: block;
+  margin-bottom: 5px;
+  font-weight: bold;
+}
+
+.new-food-title input[type="text"],
+form input[type="number"] {
+  width: 100%;
+  padding: 8px;
+  margin-bottom: 10px;
+  border: 1px solid #ccc;
+  border-radius: 3px;
+}
+
+.new-food-title input[type="submit"] {
+  background-color: #11672cda;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 3px;
+  transition: 0.7s ease;
+}
+
+.new-food-title input[type="submit"]:hover {
+  background-color: #29b957;
+}

@@ -25,11 +25,10 @@ class RecipiesController < ApplicationController
 
   def public_recipies
     @is_public = Recipe.where(is_public: true).includes(:user, :recipe_foods).order('created_at DESC')
-
   end
 
   def destroy
-  @recipe = Recipe.find(params[:id])
+    @recipe = Recipe.find(params[:id])
 
     if @recipe.destroy
       redirect_to recipies_path, notice: 'Recipe was successfully deleted.'

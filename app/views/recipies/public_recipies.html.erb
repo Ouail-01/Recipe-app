@@ -1,10 +1,13 @@
-<section>
+<section class="public-recipies">
 <h1>Public Recipes</h1>
-
+<div class="recipies">
 <% if @is_public.length > 0 %>
   <% @is_public.each do |recipe| %>
+    <div class="name">
     <%= link_to "#{recipe.name}", "/recipies/#{recipe.id}" %>
     <p>by: <%= recipe.user.name %></p>
+    </div>
+    <div class="price">
     <p>Total food Items: <%= recipe.recipe_foods.length %></p>
 
     <% total_price = 0 %>
@@ -12,6 +15,7 @@
       <% total_price += food.food.price %>
     <% end %>
     <p>Total price: <%= number_to_currency(total_price) %></p>
+    </div>
   <% end %>
 <% else %>
   <h2>No Public Recipes</h2>

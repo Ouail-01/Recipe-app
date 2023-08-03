@@ -92,3 +92,33 @@ form input[type="number"] {
 .new-food-title input[type="submit"]:hover {
   background-color: #29b957;
 }
+
+.public-recipies {
+  text-align: center;
+  width: 100%;
+}
+
+.public-recipies h1 {
+  margin: 35px 0 25px 0;
+  text-align: center;
+  width: 100%;
+}
+
+.public-recipies a {
+  font-size: 23px;
+  text-decoration: none;
+  cursor: pointer;
+  color: #313131;
+  text-transform: capitalize;
+}
+
+.public-recipies .recipies {
+  border: 3px solid;
+  width: 70%;
+  text-align: center;
+  margin: auto;
+  display: flex;
+  justify-content: space-between;
+  padding-right: 20%;
+  padding-left: 20%;
+}

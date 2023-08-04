@@ -12,7 +12,7 @@
     </div>
   <% end %>
 
-  <%= form_with model: @food, url: new_food_path, method: :post do |form| %>
+  <%= form_with path: new_food_path, model: @food, method: :post do |form| %>
     <%= form.label :name, class: "add-form" %>
     <%= form.text_field :name, class: "add-form" %>
     <br>

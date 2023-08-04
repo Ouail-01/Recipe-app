@@ -1,13 +1,13 @@
 class RecipesController < ApplicationController
-  before_action :authenticate_user!, except: %i[index public_recipes]
+  before_action :authenticate_user!, except: [:index, :public_recipes]
 
   def index
     @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
-    @recipe = Recipe.find_by(id: params[:id])
-    @foods = Food.joins(:recipe_foods).where(recipe_foods: { recipe_id: @recipe.id })
+    @recipe = Recipe.includes(:recipe_foods).find_by(id: params[:id])
+    @foods = @recipe.foods
   end
 
   def new
@@ -17,8 +17,9 @@ class RecipesController < ApplicationController
   def create
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
+
     if @recipe.save
-      redirect_to recipes_path, notice: 'Recipe was successfully added'
+      redirect_to recipes_path, notice: 'Recipe was successfully added.'
     else
       render :new, status: :unprocessable_entity
     end
@@ -41,10 +42,11 @@ class RecipesController < ApplicationController
   def toggle
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.is_public = !@recipe.is_public
+
     if @recipe.save
       redirect_to(request.referrer || root_path)
     else
-      flash[:error] = 'Error updating recipe'
+      flash[:error] = 'Error updating recipe.'
     end
   end
 

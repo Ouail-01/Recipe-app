@@ -24,7 +24,7 @@
 
 <div>
   <% if current_user.id == @recipe.user.id%>
-    <%= link_to "Generate Shopping List" %>
+    <%= link_to "Generate Shopping List", shopping_list_path  %>
     <%= link_to 'Add Ingredient', "/recipies/#{@recipe.id}/recipe_foods/new" %>
   <%end%>
 </div>

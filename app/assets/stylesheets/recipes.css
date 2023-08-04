@@ -30,7 +30,7 @@ button {
   padding: 2px 20px;
   cursor: pointer;
   background: #efefef;
-  border:1px solid #000;
+  border: 1px solid #000;
   border-radius: 2px;
 }
 
@@ -40,7 +40,7 @@ button {
   margin: 15px 0;
 }
 
-.recipe-title {
+.recipe-item-title {
   text-align: center;
   margin: 20px 0;
 }
@@ -61,9 +61,9 @@ button {
   margin: 20px 0;
 }
 
-th, td {
+th,
+td {
   border: 1px solid #e5e5e5;
   padding: 2px;
   text-align: left;
 }
-

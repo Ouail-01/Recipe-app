@@ -1,9 +1,10 @@
-<div>
-  <div>
-    <h1>Shopping List</h1>
+<section class ="shopping-list">
+  <h1>Shopping List</h1>
+  <div class="details">
     <p>The amount of food items to buy: <%= @ingredients.length %></p>
     <p>The total value of food needed: $<%= @total_price %></p>
   </div>
+  <div class="tables">
   <table>
     <thead>
       <tr>
@@ -14,7 +15,7 @@
     </thead>
     <tbody>
       <% @ingredients.each do |food, ingredients| %>
-      <tr>
+      <tr class="shop">
         <td><%= food %></td>
         <td><% total_quantity = ingredients.map(&:quantity).sum %>
           <span><%= total_quantity %> <%= ingredients.first.food.measurement_unit %></span></td>
@@ -23,4 +24,5 @@
       <% end %>
     </tbody>
   </table>
-</div>
+  </div>
+</section>

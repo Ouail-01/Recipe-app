@@ -1,10 +1,10 @@
-<section class="public-recipies">
+<section class="public-recipes">
 <h1>Public Recipes</h1>
-<div class="recipies">
+<div class="recipes">
 <% if @is_public.length > 0 %>
   <% @is_public.each do |recipe| %>
     <div class="name">
-    <%= link_to "#{recipe.name}", "/recipies/#{recipe.id}" %>
+    <%= link_to "#{recipe.name}", "/recipes/#{recipe.id}" %>
     <p>by: <%= recipe.user.name %></p>
     </div>
     <div class="price">

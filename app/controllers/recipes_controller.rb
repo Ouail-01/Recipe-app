@@ -1,7 +1,8 @@
-class RecipiesController < ApplicationController
-  before_action :authenticate_user!, except: %i[index public_recipies]
+class RecipesController < ApplicationController
+  before_action :authenticate_user!, except: %i[index public_recipes]
+
   def index
-    @recipies = Recipe.where(user_id: current_user.id)
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
@@ -17,13 +18,13 @@ class RecipiesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-      redirect_to recipies_path, notice: 'Recipe was successfully deleted.'
+      redirect_to recipes_path, notice: 'Recipe was successfully added'
     else
       render :new, status: :unprocessable_entity
     end
   end
 
-  def public_recipies
+  def public_recipes
     @is_public = Recipe.where(is_public: true).includes(:user, :recipe_foods).order('created_at DESC')
   end
 
@@ -31,13 +32,13 @@ class RecipiesController < ApplicationController
     @recipe = Recipe.find(params[:id])
 
     if @recipe.destroy
-      redirect_to recipies_path, notice: 'Recipe was successfully deleted.'
+      redirect_to recipes_path, notice: 'Recipe was successfully deleted.'
     else
-      redirect_to recipies_path, alert: 'There was an error deleting the Recipe.'
+      redirect_to recipes_path, alert: 'There was an error deleting the Recipe.'
     end
   end
 
-  def toogle
+  def toggle
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.is_public = !@recipe.is_public
     if @recipe.save

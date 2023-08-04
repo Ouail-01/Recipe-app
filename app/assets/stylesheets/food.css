@@ -93,18 +93,18 @@ form input[type="number"] {
   background-color: #29b957;
 }
 
-.public-recipies {
+.public-recipes {
   text-align: center;
   width: 100%;
 }
 
-.public-recipies h1 {
+.public-recipes h1 {
   margin: 35px 0 25px 0;
   text-align: center;
   width: 100%;
 }
 
-.public-recipies a {
+.public-recipes a {
   font-size: 23px;
   text-decoration: none;
   cursor: pointer;
@@ -112,7 +112,7 @@ form input[type="number"] {
   text-transform: capitalize;
 }
 
-.public-recipies .recipies {
+.public-recipes .recipes {
   border: 3px solid;
   width: 70%;
   text-align: center;

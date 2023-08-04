@@ -2,7 +2,7 @@ class RecipesController < ApplicationController
   before_action :authenticate_user!, except: %i[index public_recipes]
 
   def index
-    @recipes = Recipe.all
+    @recipes = Recipe.where(user_id: current_user.id)
   end
 
   def show
@@ -18,7 +18,7 @@ class RecipesController < ApplicationController
     @recipe = Recipe.new(recipe_params)
     @recipe.user_id = current_user.id
     if @recipe.save
-      redirect_to recipes_path, notice: 'Recipe was successfully deleted.'
+      redirect_to recipes_path, notice: 'Recipe was successfully added'
     else
       render :new, status: :unprocessable_entity
     end

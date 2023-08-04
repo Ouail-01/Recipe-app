@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-RSpec.describe 'Recipe_foods', type: :request do
+RSpec.describe 'Foods', type: :request do
   describe 'GET foods#index' do
     before(:each) do
       user = User.create name: 'Tom', email: 'tom@example.com', password: '123456'
@@ -16,8 +16,8 @@ RSpec.describe 'Recipe_foods', type: :request do
       expect(response).to render_template(:index)
     end
 
-    it 'should render correct content' do
-      expect(response.body).to include('Recipe')
+    it "should render page contenting 'Foods'" do
+      expect(response.body).to include('Foods')
     end
   end
 end

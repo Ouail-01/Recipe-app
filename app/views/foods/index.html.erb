@@ -1,8 +1,8 @@
 <section class="food-page">
-<h1>Foods page :</h1>
-<div class="add-food-link">
-  <%= link_to 'Add Food', '/foods/new' %>
-</div>
+  <h1>Foods page:</h1>
+  <div class="add-food-link">
+    <%= link_to 'Add Food', '/foods/new' %>
+  </div>
   <table>
     <thead>
       <tr>
@@ -13,7 +13,7 @@
       </tr>
     </thead>
     <tbody>
-      <% @foods.each do |food|  %>
+      <% @foods.each do |food| %>
         <tr class="foods">
           <td><%= food.name %></td>
           <td><%= food.measurement_unit %></td>

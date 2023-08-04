@@ -1,6 +1,23 @@
-<h1>New Recipe</h1>
-<%= render "form", recipe: @recipe %>
-<br>
+<%= form_with model: @recipe, url: recipes_path, method: :post do |form| %>
 <div>
-  <%= link_to "Back to Recipes", recipes_path %>
+<h1>New Recipe</h1>
+  <%= form.label :name %>
+    <%= form.text_field :name %>
+​
+    <%= form.label :preparation_time %>
+    <%= form.text_field :preparation_time %>
+​
+    <%= form.label :cooking_time %>
+    <%= form.text_field :cooking_time %>
+​
+    <%= form.label :description %>
+    <%= form.text_field :description %>
 </div>
+  <%= form.radio_button :is_public, true %>
+  <%= form.label 'Public' , :is_public=> 'True' %>
+  <%= form.radio_button :is_public, false %>
+  <%= form.label 'Private' , :public=> 'False' %>
+<div>
+  <span> <%= form.submit 'Add Recipe' %></span>
+</div>
+  <% end %>

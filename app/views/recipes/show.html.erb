@@ -1,35 +1,37 @@
-<div>
-  <div>
-    <h3>Name:<%= @recipe.name %> </h3>
-    <p>Preparation Time: <%= @recipe.preparation_time%> </p>
-    <p>Cooking Time:<%= @recipe.cooking_time %> </p>
-    <p>Description:<%= @recipe.description %> </p>
+<div class="recipe-item-container">
+  <div class="recipe-title">
+    <h2><%= @recipe.name %> Recipe</h2>
   </div>
-  <div>
-    <% if @recipe.is_public %>
-      <span>Public</span>
-      <%= link_to "/toggle/#{@recipe.id}" do%>
-        <label><input type="checkbox" value="" checked></label>
-      <%end%>
+  <div class="prep-steps">
+    <p>Preparation Time: <%= @recipe.preparation_time%> Minutes </p>
+    <br>
+    <p>Cooking Time:<%= @recipe.cooking_time %> Minutes </p>
+    <br>
+    <p>Steps:<br><%= @recipe.description %> </p>
 
-    <% else %>
-      <span>Public</span>
-      <%= link_to "/toggle/#{@recipe.id}" do%>
-        <label><input type="checkbox" value=""></label>
-      <%end%>
+    <div class="toggle">
+      <% if @recipe.is_public %>
+        <span>Public</span>
+        <%= link_to "/toggle/#{@recipe.id}" do%>
+          <label><input type="checkbox" value="" checked></label>
+        <%end%>
 
-    <% end %>
+      <% else %>
+        <span>Public</span>
+        <%= link_to "/toggle/#{@recipe.id}" do%>
+          <label><input type="checkbox" value=""></label>
+        <%end%>
+      <% end %>
+    </div>
   </div>
-</div>
-
-<div>
-  <% if current_user.id == @recipe.user.id%>
-    <%= link_to "Generate Shopping List", shopping_list_path  %>
-    <%= link_to 'Add Ingredient', "/recipies/#{@recipe.id}/recipe_foods/new" %>
-  <%end%>
-</div>
-
-<table>
+  <div class="recipe-buttons">
+    <% if current_user.id == @recipe.user.id%>
+      <%= link_to "Generate Shopping List", shopping_list_path, class: "link-buttons" %>
+      <%= link_to 'Add Ingredient', "/recipies/#{@recipe.id}/recipe_foods/new", class: "link-buttons" %>
+    <%end%>
+  </div>
+  <hr>
+  <table>
   <thead>
     <tr>
       <th scope="col">Food</th>
@@ -55,3 +57,9 @@
     <% end %>
   </tbody>
 </table>
+</div>
+
+
+
+
+

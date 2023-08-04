@@ -11,7 +11,7 @@ Rails.application.routes.draw do
 
   get '/toggle/:id', to: 'recipes#toggle'
 
-  resources :recipies do
+  resources :recipes do
     resources :recipe_foods, only: %i[new create destroy]
   end
 end

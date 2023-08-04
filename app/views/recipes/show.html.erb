@@ -1,32 +1,30 @@
 <div>
   <div>
-    <h3>Name:<%= @recipe.name %> </h3>
-    <p>Preparation Time: <%= @recipe.preparation_time%> </p>
-    <p>Cooking Time:<%= @recipe.cooking_time %> </p>
-    <p>Description:<%= @recipe.description %> </p>
+    <h3>Name: <%= @recipe.name %></h3>
+    <p>Preparation Time: <%= @recipe.preparation_time %></p>
+    <p>Cooking Time: <%= @recipe.cooking_time %></p>
+    <p>Description: <%= @recipe.description %></p>
   </div>
   <div>
     <% if @recipe.is_public %>
       <span>Public</span>
-      <%= link_to "/toggle/#{@recipe.id}" do%>
+      <%= link_to "/toggle/#{@recipe.id}" do %>
         <label><input type="checkbox" value="" checked></label>
-      <%end%>
-
+      <% end %>
     <% else %>
       <span>Public</span>
-      <%= link_to "/toggle/#{@recipe.id}" do%>
+      <%= link_to "/toggle/#{@recipe.id}" do %>
         <label><input type="checkbox" value=""></label>
-      <%end%>
-
+      <% end %>
     <% end %>
   </div>
 </div>
 
 <div>
-  <% if current_user.id == @recipe.user.id%>
-    <%= link_to "Generate Shopping List", shopping_list_path  %>
-    <%= link_to 'Add Ingredient', "/recipies/#{@recipe.id}/recipe_foods/new" %>
-  <%end%>
+  <% if current_user.id == @recipe.user.id %>
+    <%= link_to "Generate Shopping List", shopping_list_path %>
+    <%= link_to 'Add Ingredient', "/recipes/#{@recipe.id}/recipe_foods/new" %>
+  <% end %>
 </div>
 
 <table>
@@ -35,20 +33,20 @@
       <th scope="col">Food</th>
       <th scope="col">Quantity</th>
       <th scope="col">Value</th>
-      <% if current_user.id == @recipe.user.id%>
-      <th scope="col">Actions</th>
+      <% if current_user.id == @recipe.user.id %>
+        <th scope="col">Actions</th>
       <% end %>
     </tr>
   </thead>
   <tbody>
-    <% @recipe.recipe_foods.each do |ingredient|%>
+    <% @recipe.recipe_foods.includes(:food).each do |ingredient| %>
       <tr>
-          <td><%= ingredient.food.name %></td>
-          <td><%= ingredient.quantity%> <%= ingredient.food.measurement_unit %></td>
-          <td>$ <%= ingredient.food.price %></td>
-          <% if current_user.id == @recipe.user.id%>
+        <td><%= ingredient.food.name %></td>
+        <td><%= ingredient.quantity %> <%= ingredient.food.measurement_unit %></td>
+        <td>$ <%= ingredient.food.price %></td>
+        <% if current_user.id == @recipe.user.id %>
           <td>
-              <%= button_to "Remove", recipy_recipe_food_path(@recipe.id, ingredient.food.id), method: :delete%>
+            <%= button_to "Remove", recipy_recipe_food_path(@recipe.id, ingredient.food.id), method: :delete %>
           </td>
         <% end %>
       </tr>

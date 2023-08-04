@@ -102,6 +102,7 @@ form input[type="number"] {
   margin: 35px 0 25px 0;
   text-align: center;
   width: 100%;
+  font-size: 28px;
 }
 
 .public-recipes a {
@@ -117,6 +118,7 @@ form input[type="number"] {
   width: 70%;
   text-align: center;
   margin: auto;
+  margin-top: 20px;
   display: flex;
   justify-content: space-between;
   padding-right: 20%;

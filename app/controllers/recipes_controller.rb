@@ -38,7 +38,7 @@ class RecipesController < ApplicationController
     end
   end
 
-  def toogle
+  def toggle
     @recipe = Recipe.find_by_id(params[:id])
     @recipe.is_public = !@recipe.is_public
     if @recipe.save

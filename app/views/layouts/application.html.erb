@@ -17,8 +17,7 @@
         <li><%= link_to 'Home', root_path %></li>
         <li><%= link_to 'Foods', foods_path %></li>
         <li><%= link_to 'Recipes list', recipes_path %></li>
-        <li><%= link_to 'Recipe details'%></li>
-        <li><%= link_to 'General shopping list'%></li>
+        <li><%= link_to 'General shopping list', shopping_list_path  %></li>
         <li>
           <%= button_to "Log Out", destroy_user_session_path, method: :delete, data: { turbo: false } %>
         </li>

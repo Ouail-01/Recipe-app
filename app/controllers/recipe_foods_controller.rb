@@ -4,7 +4,7 @@ class RecipeFoodsController < ApplicationController
   end
 
   def create
-    @recipe_food = RecipeFood.new(recipe_food_parms)
+    @recipe_food = RecipeFood.new(recipe_food_params)
     @recipe_food.recipe_id = params[:recipy_id]
 
     if @recipe_food.save

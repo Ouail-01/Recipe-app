@@ -1,0 +1,27 @@
+.navbar {
+  background: rgba(165, 165, 165, 0.574);
+}
+
+.navbar ul {
+  display: flex;
+  justify-content: flex-end;
+  gap: 2rem;
+  padding: 20px 0;
+  font-size: 18px;
+  margin: 0 5%;
+}
+
+.navbar li {
+  list-style: none;
+  font-size: 1rem;
+}
+
+.navbar a {
+  color: rgb(54, 54, 54);
+  transition: 0.6s ease;
+}
+
+.navbar a:hover {
+  text-decoration: none;
+  color: rgb(75, 160, 44);
+}

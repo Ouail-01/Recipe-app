@@ -15,7 +15,7 @@
   font-size: 30px;
 }
 
-.recipe-list .add-recipe-link{
+.recipe-list .add-recipe-link {
   margin-right: 40px;
   margin-bottom: 30px;
   display: block;
@@ -81,7 +81,7 @@ td {
   text-align: left;
 }
 
-.new-recipe h1{
+.new-recipe h1 {
   margin-bottom: 20px;
   font-size: 30px;
 }
@@ -91,7 +91,7 @@ td {
   font-size: 30px;
 }
 
-.new-ingredient div{
+.new-ingredient div {
   width: 80%;
   margin: auto;
 }

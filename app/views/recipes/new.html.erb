@@ -1,5 +1,5 @@
 <%= form_with model: @recipe, url: recipes_path, method: :post do |form| %>
-<div>
+<div class="new-recipe">
 <h1>New Recipe</h1>
   <%= form.label :name %>
     <%= form.text_field :name %>

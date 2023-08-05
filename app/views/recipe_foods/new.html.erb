@@ -1,9 +1,9 @@
 <%= form_with url: "/recipies/#{params[:recipy_id]}/recipe_foods", model: @recipe_foods, method: :post do |form| %>
 
-<section>
+<section class="new-ingredient">
 
 <h1>New Form for Ingredient</h1>
-
+<div>
 <%= form.label :quantity %>
 <%= form.number_field :quantity %>
 
@@ -13,4 +13,5 @@
 <%= form.submit 'Add Ingredient' %>
 
 <% end %>
+</div>
 </section>
